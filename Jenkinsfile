@@ -9,8 +9,7 @@ pipeline{
         stage("ship"){
             steps{
                 echo 'shipping'  
-                cred = credentials("MySecret")
-                echo "Secret = ${cred}"
+                echo credentials("MySecret")
             }
         }
     }
