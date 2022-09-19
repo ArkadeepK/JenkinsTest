@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+        CRED = credentials("MySecret")
+    }
     stages{
         stage("build"){
             steps{
@@ -9,7 +12,7 @@ pipeline{
         stage("ship"){
             steps{
                 echo 'shipping'  
-                echo credentials("MySecret")
+                echo CRED
             }
         }
     }
